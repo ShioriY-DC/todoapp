@@ -1,0 +1,16 @@
+body {
+  padding: 50px;
+  background-color: azure;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00b7ff;
+}
+table,
+tr {
+  border: solid 5px;
+  border-color: azure;
+  background-color: #ffffff;
+  margin: auto;
+}

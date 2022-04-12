@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../stylesheets/style.css" />
+
+    <title>Todoアプリ</title>
+  </head>
+  <body>
+    <!--
+    <div class="container">
+      
+      ボタン1
+    </div>
+     コメントは複数行に
+    またがってもかまいません。-->
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      type="button"
+      class="btn btn-primary mb-7"
+      data-toggle="modal"
+      data-target="#testModal1"
+    >
+      ボタン
+    </script>
+
+    <br /><br />
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col-1">状態</th>
+          <th scope="col-4">すること</th>
+          <th scope="col-3">期限</th>
+          <th scope="col-2">ボタン1</th>
+          <th scope="col-2">ボタン2</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">1</th>
+          <td>Mark</td>
+          <td>Otto</td>
+          <td><input class="btn btn-primary" type="button" value="更新" /></td>
+          <td>
+            <input
+              class="btn btn-primary"
+              type="button"
+              data-toggle="modal"
+              data-target="#testModal2"
+              value="削除"
+            />
+          </td>
+        </tr>
+        <tr>
+          <th scope="row">2</th>
+          <td>Jacob</td>
+          <td>Thornton</td>
+          <td><input class="btn btn-primary" type="button" value="更新" /></td>
+          <td>
+            <input
+              class="btn btn-primary"
+              type="button"
+              data-toggle="modal"
+              data-target="#testModal2"
+              value="削除"
+            />
+          </td>
+        </tr>
+        <tr>
+          <th scope="row">3</th>
+          <td colspan="2">Larry the Bird</td>
+          <td><input class="btn btn-primary" type="button" value="更新" /></td>
+          <td>
+            <input
+              class="btn btn-primary"
+              type="button"
+              data-toggle="modal"
+              data-target="#testModal2"
+              value="削除"
+            />
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <!-- Modal
+    <div
+      class="modal fade"
+      id="testModal2"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="basicModal"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4>
+              <div class="modal-title" id="myModalLabel2">注意</div>
+            </h4>
+          </div>
+          <div class="modal-body">
+            <label>タスクを削除しますか？</label>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">
+              閉じる
+            </button>
+            <button type="button" class="btn btn-danger">削除</button>
+          </div>
+        </div>
+      </div>
+     -->
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="testModal1"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="basicModal"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4>
+              <div class="modal-title" id="myModalLabel1">Add</div>
+            </h4>
+          </div>
+          <div class="modal-body">
+            <label>タスクの追加</label>
+            <form>
+              <div class="form-group">
+                <label for="exampleInputEmail1">Email address</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="exampleInputEmail1"
+                  aria-describedby="emailHelp"
+                  placeholder="Enter email"
+                />
+                <small id="emailHelp" class="form-text text-muted"
+                  >We'll never share your email with anyone else.</small
+                >
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1">Password</label>
+                <input
+                  type="password"
+                  class="form-control"
+                  id="exampleInputPassword1"
+                  placeholder="Password"
+                />
+              </div>
+              <div class="form-group form-check">
+                <input
+                  type="checkbox"
+                  class="form-check-input"
+                  id="exampleCheck1"
+                />
+                <label class="form-check-label" for="exampleCheck1"
+                  >Check me out</label
+                >
+              </div>
+              <!--
+              <button type="submit" class="btn btn-primary">Submit</button>
+              -->
+            </form>
+            <!-- フォームを入れたい -->
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">
+              閉じる
+            </button>
+            <button type="submit" class="btn btn-primary">追加</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
