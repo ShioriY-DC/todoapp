@@ -259,10 +259,15 @@
         );
         console.log(response)
         const list = response.map((item) => {
+          const date = new Date(item.deadline);
+          const year = date.getFullYear();
+          const month = ("0" + (date.getMonth() + 1)).slice(-2);
+          const day = ("0" + date.getDate()).slice(-2);
+          const deadlineVal = `${year}年${month}月${day}日`;
           return `
           <tr>
             <td>${item.task_name}</td>
-            <td>${item.deadline}</td>
+            <td>${deadlineVal}</td>
             <td>${item.category_name}</td>
             <td>${item.task_status}</td>
             <td>
@@ -290,7 +295,7 @@
       });
       //kousin
       $(document).on("click", "#update-button", async function () {
-        //$("#update-form").show(); //モーダル勢はいらない
+        $("#modal").show(); //モーダル勢はいらない
         const id = $(this).data("id");
         const response = await httpGet(
           "//" + window.location.host + `/api/tasks/${id}`
