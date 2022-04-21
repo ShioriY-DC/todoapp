@@ -3,7 +3,6 @@ body {
   background-color: azure;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
-
 a {
   color: #00b7ff;
 }
@@ -13,4 +12,35 @@ tr {
   border-color: azure;
   background-color: #ffffff;
   margin: auto;
+}
+tr.kan {
+  background-color: #999999;
+  color: #666666;
+}
+
+tr.sagyo {
+  background-color: rgb(163, 255, 232);
+  color: rgb(3, 108, 82);
+}
+
+tr.mi {
+  background-color: #ffffff;
+  color: red;
+}
+
+td.sei {
+  border-left-color: red;
+  border-left-width: 20px;
+}
+td.ben {
+  border-left-color: red;
+  border-left-width: 20px;
+}
+td.shigo {
+  border-left-color: red;
+  border-left-width: 20px;
+}
+td.syu {
+  border-left-color: red;
+  border-left-width: 20px;
 }

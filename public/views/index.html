@@ -264,9 +264,29 @@
           const month = ("0" + (date.getMonth() + 1)).slice(-2);
           const day = ("0" + date.getDate()).slice(-2);
           const deadlineVal = `${year}年${month}月${day}日`;
+
+          /*var sta = "0";
+          if (item.task_status == 1) {
+            var sta = "kan";
+          } else if (item.task_status == 2) {
+            var sta = "sagyo";
+          } else {
+            var sta = "mi";
+          }*/
+
+          var cate = "0";
+          if (item.category_id == 1) {
+            var cate = "sei";
+          } else if (item.category_id == 2) {
+            var cate = "ben";
+          } else if (item.category_id == 3) {
+            var cate = "shigo";
+          } else {
+            var cate = "syu";
+          }
           return `
           <tr>
-            <td>${item.task_name}</td>
+            <td class=${cate}>${item.task_name}</td>
             <td>${deadlineVal}</td>
             <td>${item.category_name}</td>
             <td>${item.task_status}</td>
