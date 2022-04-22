@@ -45,19 +45,20 @@
       <thead>
         <tr>
           <!--<th scope="col-1">状態</th>-->
-          <th scope=>タスク名</th>
-          <th scope=>期限</th>
+          <th></th>
           <th>カテゴリ名</th>
-          <th>ステータス</th>
-          <th scope=>ボタン1</th>
-          <th scope=>ボタン2</th>
+          <th>タスク名</th>
+          <th>期限</th>
+
+          <th>ボタン1</th>
+          <th>ボタン2</th>
         </tr>
       </thead>
       <tbody id="get-task"></tbody>
     </table>
 
     <!-- newtaskModal -->
-    
+
     <div
       class="modal fade"
       id="newtaskModal"
@@ -81,7 +82,7 @@
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-          <div class="modal-body" id ="create-form">
+          <div class="modal-body" id="create-form">
             <form>
               <div class="form-group">
                 <label for="taskname">タスク名</label>
@@ -103,41 +104,34 @@
               </div>
               <div class="form-group">
                 <label for="category-id">カテゴリ</label>
-                <select 
-                  class="form-control"
-                  id="categoryId"
-                  name="categoryId"
-                >
+                <select class="form-control" id="categoryId" name="categoryId">
                   <option selected>カテゴリを選択</option>
                   <option value="1">生活</option>
                   <option value="2">勉強</option>
                   <option value="3">仕事</option>
                   <option value="4">趣味</option>
                 </select>
-              
+              </div>
             </form>
           </div>
-         
+
           <div class="modal-footer">
-            <button
-              type="button" 
-              class="btn btn-default" 
-              data-dismiss="modal"
-            >
+            <button type="button" class="btn btn-default" data-dismiss="modal">
               閉じる
             </button>
-            <button 
-              type="button" 
+            <button
+              type="button"
               class="btn btn-primary"
               id="NEWTASK"
               data-dismiss="modal"
-              >追加</button>
+            >
+              追加
+            </button>
           </div>
-
         </div>
       </div>
     </div>
-  
+
     <!-- ↑newtaskModal↑ -->
     <!--↓changetaskModal↓ -->
     <div
@@ -166,20 +160,28 @@
           <div class="modal-body" id="update-form">
             <label>タスクの更新</label>
             <form>
-              
               <input type="hidden" name="id" />
               <div class="form-group">
                 <label for="taskname_up">タスク</label>
-                <input class="form-control" type="text" id="TASKNAME" name="TASKNAME" />
+                <input
+                  class="form-control"
+                  type="text"
+                  id="TASKNAME"
+                  name="TASKNAME"
+                />
               </div>
               <div class="form-group">
                 <label for="deadline-day_up">日付</label>
-                <input class="form-control" type="date" id="deadlineDay_up" name="deadlineDay_up" />
+                <input
+                  class="form-control"
+                  type="date"
+                  id="deadlineDay_up"
+                  name="deadlineDay_up"
+                />
               </div>
               <div class="form-group">
                 <label for="category-id_up">カテゴリ</label>
                 <select class="form-control" id="CATEGORY" name="CATEGORY">
-                  
                   <option value="1">生活</option>
                   <option value="2">勉強</option>
                   <option value="3">仕事</option>
@@ -189,7 +191,7 @@
 
               <div class="form-group">
                 <label for="status">ステータス</label>
-                <select class="form-control" id = "STATUS" name="STATUS">
+                <select class="form-control" id="STATUS" name="STATUS">
                   <option value="1">完了</option>
                   <option value="2">作業中</option>
                   <option value="3">未実施</option>
@@ -251,45 +253,49 @@
           "//" + window.location.host + "/api/tasks",
           requestData
         );
+        window.location.reload();
       });
       //gettask
       $(async function () {
         const response = await httpGet(
           "//" + window.location.host + "/api/tasks"
         );
-        console.log(response)
+        console.log(response);
         const list = response.map((item) => {
           const date = new Date(item.deadline);
           const year = date.getFullYear();
           const month = ("0" + (date.getMonth() + 1)).slice(-2);
           const day = ("0" + date.getDate()).slice(-2);
           const deadlineVal = `${year}年${month}月${day}日`;
-
-          /*var sta = "0";
+          console.log(item);
+          var sta = "0";
           if (item.task_status == 1) {
             var sta = "kan";
           } else if (item.task_status == 2) {
             var sta = "sagyo";
           } else {
             var sta = "mi";
-          }*/
-
-          var cate = "0";
-          if (item.category_id == 1) {
-            var cate = "sei";
-          } else if (item.category_id == 2) {
-            var cate = "ben";
-          } else if (item.category_id == 3) {
-            var cate = "shigo";
-          } else {
-            var cate = "syu";
           }
+          console.log(sta);
+          var cate = "0";
+
+          if (item.category_id == 1) {
+            var cate = `"sei"`;
+          } else if (item.category_id == 2) {
+            var cate = `"ben"`;
+          } else if (item.category_id == 3) {
+            var cate = `"shigo"`;
+          } else {
+            var cate = `"syu"`;
+          }
+          console.log(cate);
           return `
-          <tr>
-            <td class=${cate}>${item.task_name}</td>
-            <td>${deadlineVal}</td>
+          <tr class=${sta}>
+            <td class=${cate}></td>
             <td>${item.category_name}</td>
-            <td>${item.task_status}</td>
+            <td>${item.task_name}</td>
+            <td>${deadlineVal}</td>
+            <!--<td>${item.task_status}</td>-->
             <td>
               <button
                 class="btn btn-primary"
@@ -328,12 +334,10 @@
         $("#update-form input[name=id]").val(response[0].id);
         $("#update-form input[name=TASKNAME]").val(response[0].task_name);
         $("#update-form input[name=deadlineDay_up]").val(deadlineVal);
-        $("#update-form select[name=CATEGORY]").val(
-          response[0].category_id
-        );
+        $("#update-form select[name=CATEGORY]").val(response[0].category_id);
         $("#update-form select[name=STATUS]").val(response[0].task_status);
       });
-      
+
       $("#update-task").on("click", async function () {
         const id = $("#update-form input[name=id]").val();
         const requestData = {

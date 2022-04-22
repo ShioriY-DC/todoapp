@@ -29,18 +29,22 @@ tr.mi {
 }
 
 td.sei {
-  border-left-color: red;
-  border-left-width: 20px;
+  /*border-left-color: red;
+  border-left-width: 20px;*/
+  background-color: rgba(255, 0, 0, 0.5);
 }
 td.ben {
-  border-left-color: red;
-  border-left-width: 20px;
+  /*border-left-color: red;
+  border-left-width: 20px;*/
+  background-color: rgba(250, 179, 92, 0.5);
 }
 td.shigo {
-  border-left-color: red;
-  border-left-width: 20px;
+  /*border-left-color: red;
+  border-left-width: 20px;*/
+  background-color: rgba(127, 255, 212, 0.5);
 }
 td.syu {
-  border-left-color: red;
-  border-left-width: 20px;
+  /*border-left-color: red;
+  border-left-width: 20px;*/
+  background-color: #00b7ff60;
 }
