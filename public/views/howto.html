@@ -31,11 +31,11 @@
      コメントは複数行に
     またがってもかまいません。-->
     <header id="header">
-      <h1>ToDoApp</h1>
+      <a href="index.html"><h1>ToDoApp</h1></a>
       <nav>
         <td id="g-navi">
           <tr>
-            <a href="howto.html"
+            <a href="#"
               ><svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="16"
@@ -61,20 +61,134 @@
     <br />
 
     <h4>本アプリの使い方</h4>
-
     <p>
       　本アプリにはタスクの<a href="#add">追加</a>、<a href="#view">一覧表示</a
-      >、<a href="#re">編集</a>、<a href="#del">削除</a>の機能があります。<br />
+      >、<a href="#re">更新</a>、<a href="#del">削除</a>の機能があります。<br />
       アプリを使いこなしてタスク管理ができるようになりましょう！
+    </p>
+    <h5><a name="add">タスクの追加</a></h5>
+    <p>
+      　タスクが追加されていない状態だとヘッダーとボタンのみ存在しています。<br />
+      <img src="shoki.png" width="50%" /><br />
+      　ボタンをクリックするとフォームが開きます。<br />
+      <img src="form.png" width="50%" /><br />
+      登録したいタスクの名前と締切日、カテゴリーを設定して登録ボタンを押すと、記入したデータが反映されます。<br />
+      <img src="view.png" width="50%" />
     </p>
     <h5><a name="view">タスク一覧</a></h5>
     <p>
       　登録されたタスクは最初は登録順に並んでいます。<br />
       　また、表示方法にも決まりがあります。<br />
-      左から順にタスクのステータスとカテゴリ、タスクの名前、締切日、更新ボタン、削除ボタンです。
+      左から順にタスクのカテゴリとステータス、タスクの名前、締切日、更新ボタン、削除ボタンです。<br />
+      タスクのカテゴリは以下の4色で表されています。<br />
+      <center>
+        <table>
+          <tr>
+            <td class="sei">　　</td>
+            <td>生活</td>
+            <td class="ben">　　</td>
+            <td>勉強</td>
+            <td class="shigo">　　</td>
+            <td>仕事</td>
+            <td class="syu">　　</td>
+            <td>趣味</td>
+          </tr>
+        </table>
+      </center>
+      タスクのステータスは3つのカテゴリーがあり、以下の組み合わせで表されています。
+      <center>
+        <table>
+          <th>アイコン</th>
+          <th></th>
+          <th>背景色と文字色</th>
+          <tr class="mi">
+            <td>なし</td>
+            <td></td>
+            <td>　未着手[背景色:白　文字色:赤]　</td>
+          </tr>
+          <tr class="sagyo">
+            <td>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-person-workspace"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M4 16s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H4Zm4-5.95a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z"
+                />
+                <path
+                  d="M2 1a2 2 0 0 0-2 2v9.5A1.5 1.5 0 0 0 1.5 14h.653a5.373 5.373 0 0 1 1.066-2H1V3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v9h-2.219c.554.654.89 1.373 1.066 2h.653a1.5 1.5 0 0 0 1.5-1.5V3a2 2 0 0 0-2-2H2Z"
+                />
+              </svg>
+            </td>
+            <td></td>
+            <td>　作業中[背景色:白　文字色:緑]　</td>
+          </tr>
+          <tr class="kan">
+            <td>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="25"
+                height="25"
+                fill="currentColor"
+                class="bi bi-check2"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"
+                />
+              </svg>
+            </td>
+            <td></td>
+            <td>　完了　[背景色:灰　文字色:黒]　</td>
+          </tr>
+        </table>
+      </center>
     </p>
+    <h5><a name="re">タスク編集</a></h5>
+    <p>
+      　登録されたタスクは編集を行うことが可能です<br />
+      　登録時に間違えてしまったり締切日の更新や進捗具合を記録する際は更新ボタンをクリックしてください。<br />
+      更新ボタンをクリックすると、ボタンを押したタスク内の現状登録されているデータが表示されます。<br />
+      <video src="re.mp4" width="50%" controls muted /><br />
+      更新したい情報を書き換えたら更新ボタンを押して、内容を反映させましょう。
+    </p>
+
+    <h5><a name="del">タスク削除</a></h5>
+    <p>
+      　登録されたタスクは削除することができます。<br />
+      　削除ボタンをクリックすると、ボタンを押したタスクの名前の入ったアラートが表示されます。<br />
+      削除したいデータがあっている場合、OKボタンをクリックしてください。<br />
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="15"
+        height="15"
+        fill="currentColor"
+        class="bi bi-exclamation-triangle"
+        viewBox="0 0 16 16"
+      >
+        <path
+          d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"
+        />
+        <path
+          d="M7.002 12a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 5.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995z"
+        />
+      </svg>
+      一度削除したデータは復旧できません。削除する際は再度確認してください<br />
+      <video src="del.mp4" width="50%" controls muted /><br /><br /><br /><br />
+    </p>
+    <p id="page-top"><a href="#">Page Top</a></p>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"
+    ></script>
+
     <script
       src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
       integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
@@ -92,177 +206,6 @@
     ></script>
     <!--httpPost-->
     <script src="../javascripts/index.js"></script>
-
-    <script>
-      //newtask
-      $("#NEWTASK").on("click", async function () {
-        //idがNEWTASKのボタンをクリックしたらフォームからリクエストデータを取得するjQuery
-        const requestData = {
-          //create-form フォームのID name プッシュされる中身の名前
-          TaskName: $("#create-form input[name=taskName]").val(),
-          Deadline: $("#create-form input[name=deadlineDay]").val(),
-          Category: $("#create-form select[name=categoryId]").val(),
-        };
-        const response = await httpPost(
-          "//" + window.location.host + "/api/tasks",
-          requestData
-        );
-        window.location.reload();
-      });
-      //gettask
-      $(async function () {
-        const response = await httpGet(
-          "//" + window.location.host + "/api/tasks"
-        );
-        console.log(response);
-        const list = response.map((item) => {
-          const date = new Date(item.deadline);
-          const year = date.getFullYear();
-          const month = ("0" + (date.getMonth() + 1)).slice(-2);
-          const day = ("0" + date.getDate()).slice(-2);
-          const deadlineVal = `${year}年${month}月${day}日`;
-          console.log(item);
-          var sta = "0";
-          var STA = "";
-          if (item.task_status == 1) {
-            var sta = "kan";
-            var STA = `
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="25"
-                height="25"
-                fill="currentColor"
-                class="bi bi-check2"
-                viewBox="0 0 16 16"
-              >
-                <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z" />
-              </svg>
-            `;
-          } else if (item.task_status == 2) {
-            var sta = "sagyo";
-            var STA = `
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                fill="currentColor"
-                class="bi bi-person-workspace"
-                viewBox="0 0 16 16"
-              >
-                <path d="M4 16s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H4Zm4-5.95a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z" />
-                <path d="M2 1a2 2 0 0 0-2 2v9.5A1.5 1.5 0 0 0 1.5 14h.653a5.373 5.373 0 0 1 1.066-2H1V3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v9h-2.219c.554.654.89 1.373 1.066 2h.653a1.5 1.5 0 0 0 1.5-1.5V3a2 2 0 0 0-2-2H2Z" />
-              </svg>
-            `;
-          } else {
-            var sta = "mi";
-          }
-          console.log(sta);
-          var cate = "0";
-
-          if (item.category_id == 1) {
-            var cate = `"sei"`;
-          } else if (item.category_id == 2) {
-            var cate = `"ben"`;
-          } else if (item.category_id == 3) {
-            var cate = `"shigo"`;
-          } else {
-            var cate = `"syu"`;
-          }
-          console.log(cate);
-          return `
-                <tr class=${sta}>
-                  <td class=${cate}>${STA}</td>
-                  <!--<td>${item.category_name}</td>-->
-                  <td>${item.task_name}</td>
-                  <td>${deadlineVal}</td>
-                  <!--<td>${item.task_status}</td>-->
-                  <td>
-                    <button
-                      class="btn btn-primary"
-                      id="update-button"
-                      data-toggle="modal"
-                      data-target="#change"
-                      data-id=${item.id}>
-                      <svg 
-                        xmlns="http://www.w3.org/2000/svg" 
-                        width="16" 
-                        height="16" 
-                        fill="currentColor" 
-                        class="bi bi-pencil-square" 
-                        viewBox="0 0 16 16"
-                      >
-                        <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
-                        <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
-                      </svg>
-                      更新
-                    </button>
-                  <!--</td>
-                  <td>-->
-                    <button
-                      class="btn btn-danger"
-                      id="delete-button"
-                      data-id=${item.id}
-                      data-delete=${item.task_name}>
-                      <svg 
-                        xmlns="http://www.w3.org/2000/svg" 
-                        width="16" height="16" fill="currentColor" 
-                        class="bi bi-file-earmark-x" 
-                        viewBox="0 0 16 16"
-                        >
-                        <path d="M6.854 7.146a.5.5 0 1 0-.708.708L7.293 9l-1.147 1.146a.5.5 0 0 0 .708.708L8 9.707l1.146 1.147a.5.5 0 0 0 .708-.708L8.707 9l1.147-1.146a.5.5 0 0 0-.708-.708L8 8.293 6.854 7.146z"/>
-                        <path d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2zM9.5 3A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5v2z"/>
-                      </svg>
-                      削除
-                    </button>
-                  </td>
-                </tr>`;
-        });
-        $("tbody#get-task").append(list);
-      });
-      //kousin
-      $(document).on("click", "#update-button", async function () {
-        $("#modal").show(); //モーダル勢はいらない
-        const id = $(this).data("id");
-        const response = await httpGet(
-          "//" + window.location.host + `/api/tasks/${id}`
-        );
-        const date = new Date(response[0].deadline);
-        const year = date.getFullYear();
-        const month = ("0" + (date.getMonth() + 1)).slice(-2);
-        const day = ("0" + date.getDate()).slice(-2);
-        const deadlineVal = `${year}-${month}-${day}`;
-        $("#update-form input[name=id]").val(response[0].id);
-        $("#update-form input[name=TASKNAME]").val(response[0].task_name);
-        $("#update-form input[name=deadlineDay_up]").val(deadlineVal);
-        $("#update-form select[name=CATEGORY]").val(response[0].category_id);
-        $("#update-form select[name=STATUS]").val(response[0].task_status);
-      });
-
-      $("#update-task").on("click", async function () {
-        const id = $("#update-form input[name=id]").val();
-        const requestData = {
-          taskName: $("#update-form input[name=TASKNAME]").val(),
-          deadline: $("#update-form input[name=deadlineDay_up]").val(),
-          category: $("#update-form select[name=CATEGORY]").val(),
-          status: $("#update-form select[name=STATUS]").val(),
-        };
-        const response = await httpUpdate(
-          "//" + window.location.host + `/api/tasks/${id}`,
-          requestData
-        );
-        window.location.reload();
-      });
-
-      $(document).on("click", "#delete-button", async function () {
-        const taskName = $(this).data("delete");
-        if (confirm(`下記の内容を削除します\n ${taskName}`)) {
-          const id = $(this).data("id");
-          const response = await httpDelete(
-            "//" + window.location.host + `/api/tasks/${id}`
-          );
-          window.location.reload();
-        }
-      });
-    </script>
+    <script></script>
   </body>
 </html>
